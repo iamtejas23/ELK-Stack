@@ -7,7 +7,6 @@
 
 
 #! /bin/bash
-aws configure
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 wget https://github.com/kubernetes/kops/releases/download/v1.25.0/kops-linux-amd64
 chmod +x kops-linux-amd64 kubectl
