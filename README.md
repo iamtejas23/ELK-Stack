@@ -48,6 +48,7 @@ docker push myrepo/vitual-browser:v1.0.0
 #export PATH=$PATH:/usr/local/bin/
 #source .bashrc
 
+``Deploy On Cluster Using Kops
 
 #! /bin/bash
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
