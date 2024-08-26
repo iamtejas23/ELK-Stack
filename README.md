@@ -65,3 +65,40 @@ kops create cluster --name tejasmanets236.k8s.local --zones us-east-1a --master-
 kops update cluster --name tejasmanets236.k8s.local --yes --admin
 
 ```
+
+```
+#create deploy.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: ecommerce
+  name: ecommerce-deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: ecommerce
+  template:
+    metadata:
+      labels:
+        app: ecommerce
+    spec:
+      containers:
+      - name: cont1
+        image: image:latest   #add image
+        ports:
+          - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: abc
+spec:
+  type: LoadBalancer
+  selector:
+    app: ecommerce
+  ports:
+    - port: 80
+      targetPort: 80
+```
