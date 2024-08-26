@@ -1,4 +1,47 @@
-# ELK-Stack
+``Node App Deploy``
+
+```
+git clone https://github.com/repo.git
+cd repo
+```
+``create a Dockerfile``
+
+```
+# Use official Node.js image as base
+FROM node:14
+
+# Create and set working directory
+WORKDIR /usr/src/app
+
+# Copy package.json and package-lock.json
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the rest of the application
+COPY . .
+
+# Build the application (if applicable)
+RUN npm run build
+
+# Expose port (adjust if necessary)
+EXPOSE 3000
+
+# Start the application
+CMD ["npm", "start"]
+```
+
+``Docker image``
+
+```
+# Build the Docker image
+docker build -t myrepo/vitual-browser:latest .
+
+# Push the Docker image to Docker Hub
+docker tag myrepo/vitual-browser:latest myrepo/vitual-browser:v1.0.0
+docker push myrepo/vitual-browser:v1.0.0
+```
 
 ```
 #vim .bashrc
