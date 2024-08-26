@@ -102,3 +102,10 @@ spec:
     - port: 80
       targetPort: 80
 ```
+```
+#-- to create kops service
+kubectl create -f live.yml   
+
+#-- to deploy the kops services and list
+kubectl get deploy,svc       
+```
